@@ -2,7 +2,7 @@ const https = require('https');
 const fetch = require('node-fetch');
 
 const api_url = "https://justmysocks6.net/members/getbwcounter.php?service=262606&id=4ee680b7-0b54-492f-83cb-8c3951babcb5"; // API URL
-const dingTalkWebhook = 'https://oapi.dingtalk.com/robot/send?access_token=8836deea7db64a137342b960a6d63c6d5b38031e86b3628eaa296612ecb7433c'; // 从环境变量中获取钉钉Webhook URL
+const dingTalkWebhook = process.env.DINGTALK_WEBHOOK; // 从环境变量中获取钉钉Webhook URL
 
 // 定义请求参数
 const myRequest = {
