@@ -1,8 +1,8 @@
-name: Daily Report
+name: Hourly Report
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 每天 UTC 时间0点运行
+    - cron: '0 * * * *' # 每小时的第0分钟触发一次
 
 jobs:
   report:
@@ -18,7 +18,7 @@ jobs:
         node-version: '14'
 
     - name: Install dependencies
-      run: npm install
+      run: npm install node-fetch
 
     - name: Run script
       run: node checkBandwidth.js
