@@ -3,7 +3,8 @@ name: Hourly Report
 on:
   schedule:
     - cron: '0 * * * *' # 每小时的第0分钟触发一次
-
+  workflow_dispatch: # 手动触发
+  
 jobs:
   report:
     runs-on: ubuntu-latest
