@@ -22,3 +22,5 @@ jobs:
 
     - name: Run script
       run: node checkBandwidth.js
+      env:
+        DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
