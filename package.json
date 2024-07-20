@@ -1,12 +1,12 @@
 {
-    "name": "bandwidth-counter",
-    "version": "1.0.0",
-    "description": "A script to check bandwidth usage and send notifications",
-    "main": "checkBandwidth.js",
-    "scripts": {
-      "start": "node checkBandwidth.js"
-    },
-    "dependencies": {
-      "node-fetch": "^2.6.1"
-    }
+  "name": "bandwidth-counter",
+  "version": "1.0.0",
+  "description": "A script to check bandwidth usage and send notifications",
+  "main": "checkBandwidth.js",
+  "scripts": {
+    "start": "node checkBandwidth.js"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.1"
   }
+}
