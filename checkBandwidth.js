@@ -1,7 +1,7 @@
 const https = require('https');
 const fetch = require('node-fetch');
 
-const api_url = "https://justmysocks6.net/members/getbwcounter.php?service=262606&id=4ee680b7-0b54-492f-83cb-8c3951babcb5"; // API URL
+const api_url = process.env.JMS_API; // API URL
 const dingTalkWebhook = process.env.DINGTALK_WEBHOOK; // 从环境变量中获取钉钉Webhook URL
 
 // 定义请求参数
