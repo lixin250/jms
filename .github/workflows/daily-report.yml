@@ -25,4 +25,3 @@ jobs:
       run: node checkBandwidth.js
       env:
         DINGTALK_WEBHOOK: ${{ secrets.DINGTALK_WEBHOOK }}
-        JMS_API: ${{ secrets.JMS_API }}
