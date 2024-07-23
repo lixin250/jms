@@ -2,7 +2,7 @@ name: daily_report
 
 on:
   schedule:
-    - cron: '0 0-16 * * *' # 每天从0点到22点的每小时触发一次
+    - cron: '0 0-16 * * *' # 每天  东八  从8点到24点 的每小时触发一次
   workflow_dispatch: # 手动触发
   
 jobs:
