@@ -1,13 +1,13 @@
 const https = require('https');
 const fetch = require('node-fetch');
 
-const api_url = "https://justmysocks6.net/members/getbwcounter.php?service=262606&id=0bbe490c-2f28-4949-8dc7-570165575e4f"; // API URL
+const api_url = "https://xxxx.net/members/xxxxx"; // API URL分解到下面定义请求参数
 const dingTalkWebhook = process.env.DINGTALK_WEBHOOK; // 从环境变量中获取钉钉Webhook URL
 
 // 定义请求参数
 const myRequest = {
     hostname: 'justmysocks6.net',
-    path: '/members/getbwcounter.php?service=262606&id=4ee680b7-0b54-492f-83cb-8c3951babcb5',
+    path: '/members/getbwcounter.php?service=262606&id=0bbe490c-2f28-4949-8dc7-570165575e4f',
     method: 'GET',
     timeout: 4000 // 设置超时时间为4000毫秒
 };
