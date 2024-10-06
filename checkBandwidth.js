@@ -7,7 +7,7 @@ const dingTalkWebhook = process.env.DINGTALK_WEBHOOK; // 从环境变量中获�
 // 定义请求参数
 const myRequest = {
     hostname: 'justmysocks6.net',
-    path: '/members/getbwcounter.php?service=262606&id=0bbe490c-2f28-4949-8dc7-570165575e4f',
+    path: '/members/getbwcounter.php?service=262606&id=1c0473a0-400f-4d54-b98c-3255120b6d2b',
     method: 'GET',
     timeout: 4000 // 设置超时时间为4000毫秒
 };
