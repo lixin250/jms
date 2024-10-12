@@ -153,6 +153,7 @@ const req = https.request(myRequest, (res) => {
             handleStandaloneRun(monthly_bw_limit_gb, bw_used_gb, nextResetDate);
         } catch (e) {
             console.error("解析响应数据失败", e);
+            console.error("原始响应数据", data);// 打印原始数据以便调试
         }
     });
 });
