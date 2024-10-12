@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 const api_url = "https://xxxx.net/members/xxxxx"; // API URL分解到下面定义请求参数
 const dingTalkWebhook = process.env.DINGTALK_WEBHOOK; // 从环境变量中获取钉钉Webhook URL
-const dingTalkWebhook = process.env.WECHAT_WEBHOOK; // 从环境变量中获取微信Webhook URL
+const wechatWebhook = process.env.WECHAT_WEBHOOK; // 从环境变量中获取微信Webhook URL
 
 // 定义请求参数
 const myRequest = {
