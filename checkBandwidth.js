@@ -107,7 +107,12 @@ function sendWeChatMessage(message) {
         },
         body: JSON.stringify(params)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('网络响应不正常');
+        }
+        return response.json();
+    })
     .then(data => {
         if (data.errcode === 0) {
             console.log('微信消息发送成功');
