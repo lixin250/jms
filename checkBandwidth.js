@@ -61,6 +61,7 @@ function handleStandaloneRun(monthly_bw_limit_gb, bw_used_gb, nextResetDate) {
 // 发送钉钉消息
 function sendDingTalkMessage(message) {
     const url = dingTalkWebhook;
+    console.log('dingTalkWebhook: ', url);
     const params = {
         msgtype: 'text',
         text: {
@@ -78,9 +79,9 @@ function sendDingTalkMessage(message) {
     .then(response => response.json())
     .then(data => {
         if (data.errcode === 0) {
-            console.log('消息发送成功');
+            console.log('消息发送成功 DingTalk');
         } else {
-            console.error('消息发送失败', data);
+            console.error('消息发送失败 DingTalk', data);
         }
     })
     .catch(error => {
@@ -91,6 +92,7 @@ function sendDingTalkMessage(message) {
 // 发送微信消息
 function sendWeChatMessage(message) {
     const url = wechatWebhook;
+    console.log('wechatWebhook: ', url);
     const params = {
         msgtype: 'text',
         text: {
