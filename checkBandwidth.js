@@ -6,7 +6,7 @@ const wechatWebhook = process.env.WECHAT_WEBHOOK; // 从环境变量中获取微
 
 const jmsApiUuid = process.env.JMS_API; // 从环境变量中获取 just my socks V2Ray UUID
 console.log('JMS_API UUID:', jmsApiUuid);
-const jmsPath = '/members/getbwcounter.php?service=262606&id=${jmsApiUuid}';
+const jmsPath = `/members/getbwcounter.php?service=262606&id=${jmsApiUuid}`;
 console.log('jmsPath:', jmsPath);
 
 // 定义请求参数
