@@ -1,14 +1,18 @@
 const https = require('https');
 const fetch = require('node-fetch');
 
-const jmsApiUuid = process.env.JMS_API; // 从环境变量中获取 just my socks V2Ray UUID
 const dingTalkWebhook = process.env.DINGTALK_WEBHOOK; // 从环境变量中获取钉钉Webhook URL
 const wechatWebhook = process.env.WECHAT_WEBHOOK; // 从环境变量中获取微信Webhook URL
+
+const jmsApiUuid = process.env.JMS_API; // 从环境变量中获取 just my socks V2Ray UUID
+console.log('JMS_API UUID:', jmsApiUuid);
+const jmsPath = '/members/getbwcounter.php?service=262606&id=${jmsApiUuid}';
+console.log('jmsPath:', jmsPath);
 
 // 定义请求参数
 const myRequest = {
     hostname: 'justmysocks6.net',
-    path: '/members/getbwcounter.php?service=262606&id=${jmsApiUuid}',
+    path: jmsPath,
     method: 'GET',
     timeout: 4000 // 设置超时时间为4000毫秒
 };
