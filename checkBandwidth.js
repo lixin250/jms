@@ -1,14 +1,14 @@
 const https = require('https');
 const fetch = require('node-fetch');
 
-const api_url = "https://xxxx.net/members/xxxxx"; // API URL分解到下面定义请求参数
+const jmsApiUuid = process.env.JMS_API; // 从环境变量中获取 just my socks V2Ray UUID
 const dingTalkWebhook = process.env.DINGTALK_WEBHOOK; // 从环境变量中获取钉钉Webhook URL
 const wechatWebhook = process.env.WECHAT_WEBHOOK; // 从环境变量中获取微信Webhook URL
 
 // 定义请求参数
 const myRequest = {
     hostname: 'justmysocks6.net',
-    path: '/members/getbwcounter.php?service=262606&id=1c0473a0-400f-4d54-b98c-3255120b6d2b',
+    path: '/members/getbwcounter.php?service=262606&id=${jmsApiUuid}',
     method: 'GET',
     timeout: 4000 // 设置超时时间为4000毫秒
 };
