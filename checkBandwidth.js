@@ -3,6 +3,7 @@ const fetch = require('node-fetch');
 
 const api_url = "https://xxxx.net/members/xxxxx"; // API URL分解到下面定义请求参数
 const dingTalkWebhook = process.env.DINGTALK_WEBHOOK; // 从环境变量中获取钉钉Webhook URL
+const dingTalkWebhook = process.env.WECHAT_WEBHOOK; // 从环境变量中获取微信Webhook URL
 
 // 定义请求参数
 const myRequest = {
@@ -54,6 +55,7 @@ function handleStandaloneRun(monthly_bw_limit_gb, bw_used_gb, nextResetDate) {
 
     console.log(message);
     sendDingTalkMessage(message);
+    sendWeChatMessage(message);
 }
 
 // 发送钉钉消息
@@ -79,6 +81,36 @@ function sendDingTalkMessage(message) {
             console.log('消息发送成功');
         } else {
             console.error('消息发送失败', data);
+        }
+    })
+    .catch(error => {
+        console.error('请求失败', error);
+    });
+}
+
+// 发送微信消息
+function sendWeChatMessage(message) {
+    const url = wechatWebhook;
+    const params = {
+        msgtype: 'text',
+        text: {
+            content: message
+        }
+    };
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(params)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.errcode === 0) {
+            console.log('微信消息发送成功');
+        } else {
+            console.error('微信消息发送失败', data);
         }
     })
     .catch(error => {
